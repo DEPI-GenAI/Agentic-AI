@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+groq
+huggingface-hub
+python-dotenv
+langchain   # if you use it
+langchain-community
