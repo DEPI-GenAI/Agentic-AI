@@ -1,26 +1,26 @@
 # 🧠 Agentic AI System
 
-Evolving **Agentic AI** project developed during the **DEPI Generative AI R4** program.
+Evolving **Agentic AI** project built during the **DEPI Generative AI R4** program.
 
 ## Features
-- Decision Engine (Functional API)
-- Self-correction / Reflection mechanism  
-- Tool integration
+- Decision Engine using Functional API
+- Self-correction / Reflection mechanism
+- Tool calling & validation
 - Planned FastAPI deployment
 
-## Project Structure
+## Folder Structure
 
 ```bash
 agentic/
-├── core/functional_api/      # Core decision engine logic
-├── self_correction/          # Self-correction and validation
+├── core/functional_api/      # Decision engine + core logic
+├── self_correction/          # Self-correction module (`corrector.py`)
 ├── notebooks/archive/        # Old experiment notebooks
-├── app/                      # FastAPI app (future)
+├── app/                      # Future FastAPI app
 ├── tools/
 ├── memory/
-├── .env.example
 ├── requirements.txt
-└── corrector.py
+├── .env.example
+└── .gitignore
 ```
 
 ## Setup
@@ -40,5 +40,6 @@ Run the self-correction validator (example):
 
 ```bash
 python self_correction/corrector.py
+```
 
 Made as part of DEPI GenAI R4.
