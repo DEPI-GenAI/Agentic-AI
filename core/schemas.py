@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from enum import Enum
-from typing import Optional
+from typing import Any, Dict, Optional
 
 class Action(str, Enum):
     CREATE_TICKET = "CREATE_TICKET"
@@ -16,3 +16,17 @@ class DecisionRequest(BaseModel):
 class DecisionResponse(BaseModel):
     action: str          # Changed to str (more flexible)
     reason: str
+
+
+class AgentRequest(BaseModel):
+    user_request: str
+    user_id: Optional[str] = "anonymous"
+
+
+class AgentResponse(BaseModel):
+    action: str
+    reason: str
+    route: Optional[str] = None
+    route_reason: Optional[str] = None
+    data: Optional[Any] = None
+    meta: Optional[Dict[str, Any]] = None

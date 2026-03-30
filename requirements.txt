@@ -3,5 +3,8 @@ uvicorn[standard]
 groq
 huggingface-hub
 python-dotenv
+pandas
+torch
+transformers
 langchain   # if you use it
 langchain-community
