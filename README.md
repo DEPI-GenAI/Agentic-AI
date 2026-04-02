@@ -1,45 +1,56 @@
 # 🧠 Agentic AI System
+An autonomous AI agent designed for legal contract decision-making and secure data analytics, built during the DEPI Generative AI R4 program.
 
-Evolving **Agentic AI** project built during the **DEPI Generative AI R4** program.
+## 🚀 Advanced Features
+Intelligent Routing: Uses an LLM-based Router to accurately distinguish between data analytics requests and legal contract disputes.
 
-## Features
-- Decision Engine using Functional API
-- Self-correction / Reflection mechanism
-- Tool calling & validation
-- Planned FastAPI deployment
+Self-Correction (Reflection): Features an iterative repair loop that captures code execution errors and sends them back to the LLM for autonomous fixing.
 
-## Folder Structure
+Semantic Schema Mapping: Robustly handles user synonyms (e.g., "dept" → "department") and resolves column ambiguity before code generation.
 
+Double-Check Validation: Integrates a strict logic-gate using Groq (Llama-3) to verify that generated code is logically correct before execution.
+
+Secure AST Sandbox: A hardened Python execution environment that prevents unauthorized raw data access and limits operations to approved analytics functions.
+
+## 📂 Project Structure
+Bash
+Agentic-AI/
+├── agents/             # Modular Agents (Router, Analytics, Ticket)
+├── api/                # FastAPI implementation and endpoints
+├── core/               # Orchestrator and core system logic
+├── extracted/          # Validated logic migrated from experimental notebooks
+├── guards/             # Security guards (AST Sandbox, Policy guards)
+├── models/             # LLM adapters (Phi-3.5, Groq Validator)
+├── memory/             # Local data storage (CSVs)
+├── tests/              # API and logic test suites
+├── requirements.txt    # System dependencies
+├── .env.example        # Environment template (API keys)
+└── .gitignore          # Git exclusion rules
+
+## 🛠️ Setup
+1. Configure Environment:
 ```bash
-agentic/
-├── core/functional_api/      # Decision engine + core logic
-├── self_correction/          # Self-correction module (`corrector.py`)
-├── notebooks/archive/        # Old experiment notebooks
-├── app/                      # Future FastAPI app
-├── tools/
-├── memory/
-├── requirements.txt
-├── .env.example
-└── .gitignore
+cp .env.example .env
+# Add your GROQ_API_KEY and HUGGINGFACE_TOKEN to .env
 ```
 
-## Setup
-
+2. Install Dependencies:
 ```bash
-# 1. Copy environment file
-cp .env.example .env
-
-# 2. Add your real keys to .env file
-
-# 3. Install dependencies
 pip install -r requirements.txt
 ```
 
-## Usage
-Run the self-correction validator (example):
-
+3. Run the API:
 ```bash
-python self_correction/corrector.py
+uvicorn core.api.app:app --reload
 ```
 
+##🚦 Usage
+Send a POST request to the orchestrated agent endpoint:
+
+```bash
+# Example Data Analytics Query
+curl -X POST "http://127.0.0.1:8000/agent" \
+     -H "Content-Type: application/json" \
+     -d '{"user_request": "What is the average salary per department?"}'
+```
 Made as part of DEPI GenAI R4.
