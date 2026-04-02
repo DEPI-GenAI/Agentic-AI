@@ -3,10 +3,10 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Dict
 
-from core.guards.ast_sandbox import validate_analytics_code
-from core.guards.security_guard import guard_analytics_question
-from core.models.groq_validator import GroqCodeValidator
-from core.models.llm_analytics import AnalyticsCodeLLM
+from guards.ast_sandbox import validate_analytics_code
+from guards.security_guard import guard_analytics_question
+from models.groq_validator import GroqCodeValidator
+from models.llm_analytics import AnalyticsCodeLLM
 
 
 def escalate_to_human(reason: str, user_question: str) -> Dict[str, str]:

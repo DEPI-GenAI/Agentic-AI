@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import Any, Dict, Optional
 
-from core.agents.analytics_agent import AnalyticsAgent
-from core.agents.router_agent import RouterAgent
-from core.agents.ticket_agent import TicketAgent
+from agents.analytics_agent import AnalyticsAgent
+from agents.router_agent import RouterAgent
+from agents.ticket_agent import TicketAgent
 
 
 class Orchestrator:

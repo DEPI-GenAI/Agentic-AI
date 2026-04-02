@@ -4,7 +4,7 @@ import json
 import re
 from typing import Any, Dict, Optional
 
-from core.models.llm_decision_engine import DEFAULT_SYSTEM_PROMPT, PhiDecisionEngine
+from modesls.llm_decision_engine import DEFAULT_SYSTEM_PROMPT, PhiDecisionEngine
 
 
 _JSON_PATTERN = re.compile(r"\{[\s\S]*?\}")

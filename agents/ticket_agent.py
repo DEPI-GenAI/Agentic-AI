@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, Optional
 
-from core.models.llm_decision_engine import PhiDecisionEngine
+from models.llm_decision_engine import PhiDecisionEngine
 
 
 class TicketAgent:

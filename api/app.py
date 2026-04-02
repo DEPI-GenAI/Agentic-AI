@@ -5,7 +5,7 @@ import asyncio
 from fastapi import FastAPI, HTTPException
 
 from core.orchestrator import Orchestrator
-from core.schemas import AgentRequest, AgentResponse, DecisionRequest, DecisionResponse
+from schemas import AgentRequest, AgentResponse, DecisionRequest, DecisionResponse
 from core.config import settings
 
 
