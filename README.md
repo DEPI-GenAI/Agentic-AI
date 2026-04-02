@@ -13,7 +13,8 @@ Double-Check Validation: Integrates a strict logic-gate using Groq (Llama-3) to 
 Secure AST Sandbox: A hardened Python execution environment that prevents unauthorized raw data access and limits operations to approved analytics functions.
 
 ## 📂 Project Structure
-Bash
+
+```bash
 Agentic-AI/
 ├── agents/             # Modular Agents (Router, Analytics, Ticket)
 ├── api/                # FastAPI implementation and endpoints
@@ -26,6 +27,7 @@ Agentic-AI/
 ├── requirements.txt    # System dependencies
 ├── .env.example        # Environment template (API keys)
 └── .gitignore          # Git exclusion rules
+```
 
 ## 🛠️ Setup
 1. Configure Environment:
@@ -44,7 +46,7 @@ pip install -r requirements.txt
 uvicorn core.api.app:app --reload
 ```
 
-##🚦 Usage
+## 🚦 Usage
 Send a POST request to the orchestrated agent endpoint:
 
 ```bash
